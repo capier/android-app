@@ -6,8 +6,10 @@ import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Outline
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.support.annotation.DrawableRes
 import android.support.annotation.LayoutRes
+import android.support.v4.app.Fragment
 import android.support.v4.view.ViewCompat
 import android.support.v4.view.ViewPropertyAnimatorListener
 import android.view.LayoutInflater
@@ -185,7 +187,7 @@ fun ImageView.loadImage(uri: String?, requestListener: RequestListener<Drawable?
     Glide.with(this).load(uri).listener(requestListener).into(this)
 }
 
-fun ImageView.loadGif(uri: String?, requestListener: RequestListener<GifDrawable?> ? = null) {
+fun ImageView.loadGif(uri: String?, requestListener: RequestListener<GifDrawable?>? = null) {
     if (requestListener != null) {
         Glide.with(this).asGif().load(uri).listener(requestListener).into(this)
     } else {
